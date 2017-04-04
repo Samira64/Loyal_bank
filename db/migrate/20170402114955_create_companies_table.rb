@@ -3,7 +3,7 @@ class CreateCompaniesTable < ActiveRecord::Migration[5.0]
   	create_table :companies do |t|
   		t.string :name
   		t.string :address
-  		t.string :director
+  		t.string :directors
   		t.string :logo_url
   		t.json :custom_fields
 
