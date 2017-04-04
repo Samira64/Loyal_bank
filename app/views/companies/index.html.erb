@@ -1,0 +1,24 @@
+<h4>Companies</h4>
+<div style="text-align: right; margin-bottom: 10px">
+	<%= link_to 'New Company', new_company_url %>
+</div>
+<table cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Directors</th>
+			<th>Address</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @companies.each do |company| %>
+			<tr>
+				<td><%= company.name %></td>
+				<td><%= company.directors %></td>
+				<td><%= company.address %></td>
+				<td> <%= link_to 'View', company_url(company) %></td>
+			</tr>
+		<% end  %>
+	</tbody>
+</table>

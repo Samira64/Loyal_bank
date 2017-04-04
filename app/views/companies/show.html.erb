@@ -1,0 +1,15 @@
+<h1>Show company details</h1>
+	<h4><%= flash[:notice] %></h4>
+	<p><%= @company.logo_url %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+<p><strong>address:</strong>
+<%= @company.address %>
+</p>
+<p><strong>directors:</strong>
+<%= @company.directors %>
+</p>
+
+<%= link_to 'Back', companies_url %>
