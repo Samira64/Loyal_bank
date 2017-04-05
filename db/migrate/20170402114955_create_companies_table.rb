@@ -4,10 +4,11 @@ class CreateCompaniesTable < ActiveRecord::Migration[5.0]
   		t.string :name
   		t.string :address
   		t.string :directors
-  		t.string :logo_url
+  		t.attachment :logo
   		t.json :custom_fields
 
   		t.timestamps
   	end
   end
+
 end

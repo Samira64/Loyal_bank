@@ -1,6 +1,6 @@
 <h1>Show company details</h1>
 	<h4><%= flash[:notice] %></h4>
-	<p><%= @company.logo_url %></p>
+	<p><%= image_tag @company.logo.url(:small) %></p>
 <p>
   <strong>Name:</strong>
   <%= @company.name %>

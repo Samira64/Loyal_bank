@@ -36,10 +36,13 @@ ActiveRecord::Schema.define(version: 201704021115048) do
     t.string   "name"
     t.string   "address"
     t.string   "directors"
-    t.string   "logo_url"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.json     "custom_fields"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

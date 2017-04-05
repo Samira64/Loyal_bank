@@ -10,7 +10,7 @@ class CreateBankAccountsTable < ActiveRecord::Migration[5.0]
   		t.string :bank_address
   		t.string :username
   		t.string :password
-  		t.string :logo_url
+  		t.string :logo
   		t.json :custom_fields
 
   		t.timestamps
