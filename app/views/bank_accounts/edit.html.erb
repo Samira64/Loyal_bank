@@ -1,0 +1,87 @@
+<div class='page-header'>
+	<h3>Edit Current Bank Account</h3>
+</div>
+<%= form_for @bank_account, url: { action: "update" }, html: { multipart: true, class:"form-horizontal" } do |f| %>
+<% if @bank_account.errors.any? %>
+<div class= "alert alert-danger">
+	<strong>
+		<%= pluralize(@bank_account.errors.count, "error") %>
+		prevented you from registering:
+	</strong>
+	<ul>
+		<% @bank_account.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group">
+	<%= f.label :logo, class: "control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.file_field :logo, class: "form-control" %></div>
+</div>
+
+<div class="form-group">
+	<%= f.label :bank_name, class: "control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.text_field :bank_name, class: "form-control" %></div>
+</div>
+
+<div class="form-group">
+	<fieldset>
+		<%= f.label :currency, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.radio_button :currency, "Dollar" %> <%= f.label "bank_account_currency_dollar", "Dollar" %></div><br>
+		<div class="col-sm-10"><%= f.radio_button :currency, "Rials" %> <%= f.label "bank_account_currency_euro", "Rials" %></div><br>
+		<div class="col-sm-10", style="margin-left: 195px;"><%= f.radio_button :currency, "Ringgit" %> <%= f.label "bank_account_currency_dollar", "Ringgit" %></div><br>
+	</fieldset>
+</div>
+
+<div class="form-group">
+	<fieldset>
+		<%= f.label :account_type, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.radio_button :account_type, "checking_account" %> <%= f.label "bank_account_account_type_checking_account", "checking account" %></div><br>
+		<div class="col-sm-10"><%= f.radio_button :account_type, "saving_account" %> <%= f.label "bank_account_account_type_saving_account", "saving account" %></div><br>
+	</fieldset>
+	</div>
+
+	<div class= "form-group">
+		<%= f.label :account_number, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.text_area :account_number, class: "form-control" %></div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :swift_code, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.text_field :swift_code, class: "form-control" %></div>
+	</div>
+
+	<div class= "form-group">
+		<%= f.label :bank_address, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.text_field :bank_address, class: "form-control" %></div>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :username, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.text_field :username, class: "form-control" %></div>
+	</div>
+
+	<div class= "form-group">
+		<%= f.label :password, class: "control-label col-sm-2" %>
+		<div class="col-sm-10"><%= f.text_field :password, class: "form-control" %></div>
+	</div>
+
+	<%= f.submit class: "btn-btn-primary", class: "bg-info" %>
+
+	<% end %>
+
+	<ul class="pager">
+		<li><%= link_to 'Back', @company %></li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+

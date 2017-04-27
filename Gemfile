@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'hirb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,6 +20,9 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
+gem 'bootstrap3-rails'
+
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

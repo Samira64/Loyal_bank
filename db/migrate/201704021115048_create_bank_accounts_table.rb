@@ -4,7 +4,7 @@ class CreateBankAccountsTable < ActiveRecord::Migration[5.0]
   		t.references :company, foreign_key: true
   		t.string :bank_name
   		t.string :currency
-  		t.string :type
+  		t.string :account_type
   		t.string :account_number
   		t.string :swift_code
   		t.string :bank_address

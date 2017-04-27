@@ -1,24 +1,33 @@
-<h4>Companies</h4>
-<div style="text-align: right; margin-bottom: 10px">
-	<%= link_to 'New Company', new_company_url %>
+<div class="link">
+	<ul class="pager">
+		<li><%= link_to 'Create a New Company', new_company_url %></li>
+	</ul>
 </div>
-<table cellpadding="0" cellspacing="0">
+
+<div class="page-header">
+	<h3>Companies</h3>
+</div>
+
+<table class="table">
 	<thead>
 		<tr>
 			<th>Name</th>
 			<th>Directors</th>
 			<th>Address</th>
-			<th></th>
+			<th>number of accounts</th>
+			<th>View Details</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @companies.each do |company| %>
-			<tr>
-				<td><%= company.name %></td>
-				<td><%= company.directors %></td>
-				<td><%= company.address %></td>
-				<td> <%= link_to 'View', company_url(company) %></td>
-			</tr>
+		<tr>
+			<td><%= company.name %></td>
+			<td><%= company.directors %></td>
+			<td><%= company.address %></td>
+			<td><%= company.bank_accounts.count %></td>
+			<td> <mark><%= link_to 'View', company_url(company)%></mark></td>
+		</tr>
 		<% end  %>
 	</tbody>
 </table>
+</div>

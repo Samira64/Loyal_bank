@@ -1,15 +1,50 @@
-<h1>Show company details</h1>
-	<h4><%= flash[:notice] %></h4>
-	<p><%= image_tag @company.logo.url(:small) %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
-<p><strong>address:</strong>
-<%= @company.address %>
-</p>
-<p><strong>directors:</strong>
-<%= @company.directors %>
-</p>
 
-<%= link_to 'Back', companies_url %>
+<div class="link">
+	<ul class="pager">
+		<li><%= link_to 'Create a New Bank Account', new_company_bank_account_url(@company) %></li>
+	</ul>
+</div>
+
+<div class="page-header">
+	<h3>Show company's details</h3>
+</div>
+
+<h4><%= flash[:notice] %></h4>
+<p><%= image_tag @company.logo.url(:small) %></p>
+<p>
+	<strong>Name:</strong>
+	<%= @company.name %>
+</p>
+<p><strong>Address:</strong>
+	<%= @company.address %>
+</p>
+<p><strong>Directors:</strong>
+	<%= @company.directors %>
+</p><br>
+
+<strong> List of current company's account numbers: </strong><br><br>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Bank Name</th>
+			<th>Currency</th>
+			<th>View Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @company.bank_accounts.each do |account| %>
+		<tr>
+			<td><%= account.bank_name %></td>
+			<td><%= account.currency %></td>
+			<td> <mark><%= link_to 'View', company_bank_account_url(@company, account) %> </mark>
+				<!-- <td><a HREF="/companies/<%= account.company.id %>/bank_accounts/<%= account.id %>"> vvvview /<a> </td> -->
+			</tr>
+			<% end %>
+		</tbody>
+</table>
+	<br>
+
+	<ul class="pager">
+		<li><%= link_to 'Back To Companies', companies_url %></li>
+	</ul>

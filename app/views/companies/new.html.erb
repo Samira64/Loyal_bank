@@ -1,46 +1,51 @@
-	<div class="page-header">
-		<h1>Create Company</h1>
-	</div>
 
-	<%= form_for @company, html: { multipart: true } do |f| %>
-	<% if @company.errors.any? %>
-	<div class= "alert alert-danger">
-		<strong>
-			<%= pluralize(@company.errors.count, "error") %>
-			prevented you from registering:
-		</strong>
-		<ul>
-			<% @company.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
+<div class="page-header">
+	<h3>Create a Company</h3>
+</div>
 
-	<div class="form-group">
-		<%= f.label :logo %>
-		<%= f.file_field :logo, class: "form-control" %>
-	</div>
-	<div class= "form-group">
-		<%= f.label :name %>
-		<%= f.text_field :name, class: "form-control" %>
-	</div>
-	<div>
-		<%= f.label :directors %>
-		<%= f.text_field :directors, class: "form-control" %>
-	</div>
-	<div class= "form-group">
-		<%= f.label :address %>
-		<%= f.text_area :address, class: "form-control" %>
-	</div>
+<%= form_for @company, html: { multipart: true, class: "form-horizontal" } do |f| %>
+<% if @company.errors.any? %>
+<div class= "alert alert-danger">
+	<strong>
+		<%= pluralize(@company.errors.count, "error") %>
+		prevented you from registering:
+	</strong>
+	<ul>
+		<% @company.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-	<div class= "form-group">
-		<%= f.label :custom_fields %>
-		<%= f.text_field :custom_fields, class: "form-control" %>
-	</div>
-	<%= f.submit class: "btn-btn-primary" %>
-	<% end %>
+<div class="form-group">
+	<%= f.label :logo, class: "control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.file_field :logo, class: "form-control" %></div>
+</div>
+<div class= "form-group">
+	<%= f.label :name, class: "control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.text_field :name, class: "form-control" %></div>
+</div>
+<div class="form-group">
+	<%= f.label :directors, class:"control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.text_field :directors, class: "form-control" %></div>
+</div>
+<div class= "form-group">
+	<%= f.label :address, class:"control-label col-sm-2" %>
+	<div class="col-sm-10"><%= f.text_area :address, class: "form-control" %></div>
+</div>
 
-	<div style="text-align: right">
-		<%= link_to 'Back', companies_url %>
-	</div>
+<%= f.submit  class: "bg-info" %>
+<% end %>
+
+
+<ul class="pager">
+	<li><a href="/companies" role="button"> Back To Companies </a></li>
+</ul>
+
+</div>
+
+
+
+
+

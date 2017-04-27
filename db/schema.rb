@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 201704021115048) do
     t.integer  "company_id"
     t.string   "bank_name"
     t.string   "currency"
-    t.string   "type"
+    t.string   "account_type"
     t.string   "account_number"
     t.string   "swift_code"
     t.string   "bank_address"
     t.string   "username"
     t.string   "password"
-    t.string   "logo_url"
+    t.string   "logo"
     t.json     "custom_fields"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
