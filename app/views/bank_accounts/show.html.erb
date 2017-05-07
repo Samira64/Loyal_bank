@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1><%= @bank_account.company.name %>'s bank accounts</h1>
+	<h1>Bank Accounts for <%= @bank_account.company.name %></h1>
 </div>
 
 <h4><%= flash[:notice] %></h4>
@@ -33,10 +33,11 @@
 	<strong>Bank Address:</strong>
 	<%= @bank_account.bank_address %>
 </p>
-<ul class="pager">
-	<li><%= link_to 'Back', @bank_account.company %></li>
-	<li><%= link_to 'Edit', edit_company_bank_account_path(@company, @bank_account) %></li>
-	<li><%= link_to 'Delete', company_bank_account_path(@company, @bank_account), method: :delete, data: {confirm: "Are you sure?"} %></li>
+
+<div class="edit-delete">
+	<%= link_to 'Edit', edit_company_bank_account_path(@company, @bank_account), class: 'btn btn-success' %> 
+	<%= link_to 'Delete', company_bank_account_path(@company, @bank_account), class: 'btn btn-danger', method: :delete, data: {confirm: "Are you sure?"} %>
+</div>	
+<ul class="pager back-button">
+	<li><%= link_to 'Back To Current Company', @bank_account.company %></li>
 </ul>
-
-

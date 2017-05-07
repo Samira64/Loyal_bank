@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /public/companies/*
+/public/bank_accounts/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep

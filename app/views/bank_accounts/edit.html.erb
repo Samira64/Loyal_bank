@@ -1,5 +1,5 @@
 <div class='page-header'>
-	<h3>Edit Current Bank Account</h3>
+	<h3>Edit  Bank Account for <%= @company.name %></h3>
 </div>
 <%= form_for @bank_account, url: { action: "update" }, html: { multipart: true, class:"form-horizontal" } do |f| %>
 <% if @bank_account.errors.any? %>
@@ -68,11 +68,11 @@
 		<div class="col-sm-10"><%= f.text_field :password, class: "form-control" %></div>
 	</div>
 
-	<%= f.submit class: "btn-btn-primary", class: "bg-info" %>
+	<%= f.submit class: "btn btn-primary" %>
 
 	<% end %>
 
-	<ul class="pager">
+	<ul class="pager back-button">
 		<li><%= link_to 'Back', @company %></li>
 	</ul>
 </div>

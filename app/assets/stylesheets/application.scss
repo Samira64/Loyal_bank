@@ -1,34 +1,83 @@
-@import "bootstrap";
+ @import "bootstrap";
 
+ .container {	
+ 	margin-top: 50px;
+ 	margin-bottom: 50px;
+ 	background-color: rgb(249, 249, 249);	
+ 	border: 1px solid rgba(128, 128, 128, 0.28);
+ 	border-radius: 5px;	
+ }
 
+ .pager{
+ 	float: right; 
+ }
 
-.container {	
-    background-color: #82a43a; 
-	border: 1px solid rgba(128, 128, 128, 0.28);
-	border-radius: 5px;	
-	min-height: 500px;
-}
+ ul.back-button{
+ 	margin-left: 900px;
+ 	font-size: 15px;
+ }
 
-ul.pager{
-	margin-left: 900px;
-	font-size: 15px;
-}
+ fieldset label{ 
+ 	font-weight:normal;
+ }
 
-div.col-sm-10 label{
-	font-weight:normal;
-}
+ .btn-primary{
+ 	margin-left:200px;
+ 	margin-top:25px;
+ }
 
-.bg-info{
-	margin-left:200px;
-    margin-top:25px;
-}
+ .show-pager{
+ 	margin-top: 2px;
+ }
 
-.table{
-	width: 60%;
-}
+ .edit-delete{
+ 	float: left;
+ 	margin-top: 50px;
+ }
 
-.link{
-	 text-align: right;
-	 margin-bottom: 10px; 
-	 margin-top:10px;
-}
+ .starter-template {
+ 	margin-top: 50px;
+ }
+
+ .form-control#company_logo{
+ 	background-color: initial;
+ 	border: initial;
+ }
+
+ .filter{
+ 	margin-bottom:30px;
+ 	margin-top: 40px;
+ }
+
+ .filter select{
+ 	height: 35px;
+ 	min-width: 150px;
+ }
+
+ .filter input[type="submit"]{
+ 	margin-left: 10px;
+ 	margin-top: 0px;
+ }
+
+ .filter #selection{
+ 	float:left;
+ }
+
+ .filter select[name="company_name"]{
+ 	float:left;
+ 	margin-left:20px;
+ 	margin-top:-25px;
+ }
+
+ .filter #index_update{
+ 	float: left;
+ 	margin-top: -25px;	
+ }
+
+ ul.index_pager{
+ 	margin-top: 0px;
+ }
+
+ div.form-group .control-label{
+ 	font-weight:bold;
+ }
