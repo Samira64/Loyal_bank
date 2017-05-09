@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController	
+before_action :authenticate_user
 
 	def index
 		# check if the query string contains this param. if so, it means a filter is selected
@@ -20,7 +21,7 @@ class CompaniesController < ApplicationController
 	def create
 		@company = Company.new(company_params)
 		if @company.save
-			redirect_to @company, notice: "The company   \"#{@company.name}\"   was built successfully."
+			redirect_to company_url(@company), notice: "The company   \"#{@company.name}\"   was built successfully."
 		else
 			render "new"
 		end

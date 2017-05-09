@@ -30,11 +30,11 @@
 <table class="table table-hover">
 	<thead>
 		<tr>
+		    <th>logo</th>
 			<th>Name</th>
 			<th>Directors</th>
 			<th>Address</th>
 			<th>Accounts</th>
-			<th></th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -42,6 +42,7 @@
 	<tbody>
 		<% @companies.each do |company| %>
 		<tr>
+		    <td><%= image_tag company.logo.url(:thumb), class: "img-rounded" %></td>
 			<td><%= company.name %></td>
 			<td><%= company.directors %></td>
 			<td><%= company.address %></td>

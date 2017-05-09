@@ -39,7 +39,16 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/companies">Companies</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+<div class="pull-right">
+          <% if current_user %>
+          <%= link_to 'Log Out', logout_path %>
+          <% else %>
+          <%= link_to 'Log In', login_path %> or
+          <%= link_to 'Sign Up', signup_path %>
+          <% end %>
+            </div> 
+
+        </div>
       
     </nav>
 
@@ -47,6 +56,10 @@
     <div class="starter-template">
      <div class="row">
        <div class="col-md-12">
+
+       <% if notice %>
+       <div class= "alert alert-success"><%= notice %></div>
+       <% end %>
         
       <%= yield %>         
       

@@ -9,9 +9,9 @@ class BankAccountsController < ApplicationController
 	def create
 		@company = Company.find(params[:company_id])
 		@bank_account = @company.bank_accounts.create(bank_account_params)
-		
 		if @bank_account.save
-			render :show, notice: "the account_number \"#{@bank_account.bank_name}\" was built successfully"
+			redirect_to company_bank_account_url(@company, @bank_account), 
+			notice: "The bank account \"#{@bank_account.bank_name}\" was built successfully."
 		else
 			render "new"
 		end
@@ -26,7 +26,7 @@ class BankAccountsController < ApplicationController
 	def update	
 		respond_to do |format|
 			if @bank_account.update(bank_account_params)
-				format.html { redirect_to company_bank_account_url, notice: 'Bank_account was successfully updated.' }
+				format.html { redirect_to company_bank_account_url, notice: "The bank account \"#{@bank_account.bank_name}\" was successfully updated." }
 				format.json { render :show, status: :ok, location: @bank_account }
 			else
 				format.html { render :edit }
