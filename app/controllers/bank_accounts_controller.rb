@@ -24,15 +24,11 @@ class BankAccountsController < ApplicationController
 	end
 
 	def update	
-		respond_to do |format|
 			if @bank_account.update(bank_account_params)
-				format.html { redirect_to company_bank_account_url, notice: "The bank account \"#{@bank_account.bank_name}\" was successfully updated." }
-				format.json { render :show, status: :ok, location: @bank_account }
+				redirect_to company_bank_account_url, notice: "The bank account \"#{@bank_account.bank_name}\" was successfully updated."  
 			else
-				format.html { render :edit }
-				format.json { render json: @bank_account.errors, status: :unprocessable_entity }
+		       render :edit 
 			end
-		end
 	end
 
 	def destroy
