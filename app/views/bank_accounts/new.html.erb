@@ -1,46 +1,46 @@
 <div class="page-header">
-<h3>New Bank Account for <%= @company.name %></h3>
+	<h3>New Bank Account for <%= @company.name %></h3>
 </div>
 
 <%= form_for @bank_account, url: { action: "create" }, html: { multipart: true, class: "form-horizontal"} do |f| %>
 <% if @bank_account.errors.any? %>
 <div class= "alert alert-danger">
-<strong>
-	<%= pluralize(@bank_account.errors.count, "error") %>
-	prevented you from registering:
-</strong>
-<ul>
-	<% @bank_account.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-</ul>
+	<strong>
+		<%= pluralize(@bank_account.errors.count, "error") %>
+		prevented you from registering:
+	</strong>
+	<ul>
+		<% @bank_account.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
 </div>
 <% end %>
 
 <div class="form-group">
-<%= f.label :logo, class: "control-label col-sm-2" %>
-<div class="col-sm-3"><%= f.file_field :logo, class: "form-control" %></div>
+	<%= f.label :logo, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.file_field :logo, class: "form-control" %></div>
 </div>
 
 <div class="form-group">
-<%= f.label :bank_name, class: "control-label col-sm-2" %>
-<div class="col-sm-3"><%= f.text_field :bank_name, class: "form-control" %>
-</div>
+	<%= f.label :bank_name, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.text_field :bank_name, class: "form-control" %>
+	</div>
 </div>
 
 <div class="form-group">
-<%= f.label :currency, class: "control-label col-sm-2" %>
-<div class="col-sm-3" >
-	<%= f.radio_button :currency, "Dollar" %> <%= f.label "currency_dollar", "Dollar", class: "radio-button" %><br>
-	<%= f.radio_button :currency, "Rials" %> <%= f.label "currency_euro", "Rials", class: "radio-button" %><br>
-	<%= f.radio_button :currency, "Ringgit" %> <%= f.label "currency_ringgit", "Ringgit", class: "radio-button" %></div><br>
+	<%= f.label :currency, class: "control-label col-sm-2" %>
+	<div class="col-sm-2 ">
+	<%= f.select :currency, ['USD', 'AED', 'EUR', 'IRI', 'MYR', 'GBP', 'JPY'] %>
+	</div>
 </div>
 
 <div class="form-group">
 	<%= f.label :account_type, class: "control-label col-sm-2" %>
 	<div class="col-sm-3">
-		<%= f.radio_button :account_type, "checking_account" %> <%= f.label "account_type_checking_account", "checking account", class: "radio-button" %><br>
-		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "saving account", class: "radio-button" %>
+		<%= f.radio_button :account_type, "current_account" %> <%= f.label "account_type_current_account", "Current account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "Saving account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "other" %> <%= f.label "account_type_other", "Other", class: "radio-button" %>
 	</div>
 </div>
 
@@ -66,7 +66,7 @@
 
 <div class= "form-group">
 	<%= f.label :password, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f.text_field :password, class: "form-control" %></div>
+	<div class="col-sm-3"><%= f. password_field :password, class: "form-control" %></div>
 </div>
 
 <%= f.submit  class: "btn btn-primary submit-button" %>
