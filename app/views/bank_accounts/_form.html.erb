@@ -1,0 +1,58 @@
+<%= form_for [@company, @bank_account], html: { multipart: true, class: "form-horizontal"} do |f| %>
+<% if @bank_account.errors.any? %>
+<div class= "alert alert-danger">
+	<strong>
+		<%= pluralize(@bank_account.errors.count, "error") %>
+		prevented you from registering:
+	</strong>
+	<ul>
+		<% @bank_account.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group">
+	<%= f.label :logo, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.file_field :logo, class: "form-control" %></div>
+</div>
+
+<div class="form-group">
+	<%= f.label :bank_name, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.text_field :bank_name, class: "form-control" %>
+	</div>
+</div>
+
+<div class="form-group">
+	<%= f.label :currency, class: "control-label col-sm-2" %>
+	<div class="col-sm-2 ">
+	<%= f.select :currency, ['USD', 'AED', 'EUR', 'IRI', 'MYR', 'GBP', 'JPY'] %>
+	</div>
+</div>
+
+<div class="form-group">
+	<%= f.label :account_type, class: "control-label col-sm-2" %>
+	<div class="col-sm-3">
+		<%= f.radio_button :account_type, "current_account" %> <%= f.label "account_type_current_account", "Current account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "Saving account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "other" %> <%= f.label "account_type_other", "Other", class: "radio-button" %>
+	</div>
+</div>
+
+<div class= "form-group">
+	<%= f.label :account_number, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.text_field :account_number, class: "form-control" %></div>
+</div>
+
+<div class="form-group">
+	<%= f.label :swift_code, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f.text_field :swift_code, class: "form-control" %></div>
+</div>
+<div class= "form-group">
+	<%= f.label :password, class: "control-label col-sm-2" %>
+	<div class="col-sm-3"><%= f. password_field :password, class: "form-control" %></div>
+</div>
+
+<%= f.submit  class: "btn btn-primary submit-button" %>
+<% end %>
