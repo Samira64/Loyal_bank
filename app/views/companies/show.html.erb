@@ -10,6 +10,7 @@
 	<form method="GET" class="form-method-get">
 		<label for="bank_name">Filter by Bank Name</label>
 		<select name="bank_name">
+		<option value="" selected disabled>Please select</option>
 			<% @distinct_accounts.each do |account| %>
 			<option value = "<%= account.bank_name %>" <%= "selected" if @has_filter && params["bank_name"] == account.bank_name %>> <%= account.bank_name %> </option>
 			<% end %>

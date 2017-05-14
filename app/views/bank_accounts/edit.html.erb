@@ -29,18 +29,17 @@
 
 <div class="form-group">
 	<%= f.label :currency, class: "control-label col-sm-2" %>
-	<div class="col-sm-3">
-		<%= f.radio_button :currency, "Dollar" %> <%= f.label "currency_dollar", "Dollar", class: "radio-button" %><br>
-		<%= f.radio_button :currency, "Rials" %> <%= f.label "currency_euro", "Rials", class: "radio-button" %><br>
-		<%= f.radio_button :currency, "Ringgit" %> <%= f.label "currency_dollar", "Ringgit", class: "radio-button" %>
+	<div class="col-sm-2 ">
+	<%= f.select :currency, ['USD', 'AED', 'EUR', 'IRI', 'MYR', 'GBP', 'JPY'] %>
 	</div>
 </div>
 
 <div class="form-group">
 	<%= f.label :account_type, class: "control-label col-sm-2" %>
 	<div class="col-sm-3">
-		<%= f.radio_button :account_type, "checking_account" %> <%= f.label "account_type_checking_account", "checking account", class: "radio-button" %><br>
-		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "saving account", class: "radio-button" %>
+		<%= f.radio_button :account_type, "current_account" %> <%= f.label "account_type_current_account", "Current account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "Saving account", class: "radio-button" %><br>
+		<%= f.radio_button :account_type, "other" %> <%= f.label "account_type_other", "Other", class: "radio-button" %>
 	</div>
 </div>
 
