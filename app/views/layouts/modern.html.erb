@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loyal Bank</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'modern', media: 'all' %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="header">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <span>LOYAL BANK </span>
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+         </div>
+         <ul class="header-nav">
+            <li class="header-nav-item active">AUTHORIZE</li>
+            <li class="header-nav-item">COMPANIES</li>
+         </ul>
+  
+      </div>
+   </div>
+</div>
+
+<div class="container">
+<div class="panel">
+
+    <%= yield %>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+    
+
+
+
+  

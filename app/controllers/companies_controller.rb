@@ -40,7 +40,6 @@ before_action :authenticate_user
 		else
 			@bank_accounts= @company_accounts
 		end
-
 	end
 
 	def edit
@@ -49,6 +48,7 @@ before_action :authenticate_user
 
 	def update 
 		@company= Company.find(params[:id])
+		binding.pry	
 		if @company.update(company_params)
 			redirect_to companies_url, notice: "The company \"#{@company.name}\" was updated sucessfully."
 		else
@@ -68,6 +68,5 @@ before_action :authenticate_user
 	def company_params
 		params.require(:company).permit(:name, :address, :directors, :logo)
 	end
-
 
 end

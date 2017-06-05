@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
+layout 'modern'
 
-	def new
+	def new	 
 	end
 
 	def create
