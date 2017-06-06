@@ -1,28 +1,33 @@
 <%= form_tag sessions_path, class: "form-horizontal" do %>
-            <div class="panel-header">
-               <center>
-                  <h3>Hello!</h3>
-               </center>
-            </div>
-            <div class="panel-body">            
-               <div class="login-form">
-                  <div class="control-box">
-                     <label for="email" class="label-email">Login:</label>
-                    
-                     <%= email_field_tag :email, params[:email] , placeholder: "checkit@gmail.com" %>
-                  </div>
-                  <div class="control-box">
-                     <label for="password" class="label-pass">Password:</label>
-                     <%= password_field_tag :password, nil, placeholder: "At least 4 digits"  %>
-                  </div>
-               </div>
-               
-            </div>
-            <div class="pnl-footer">
-               <center>
-                  <i class="fa fa-sign-in fa-2x signin-icon" aria-hidden="true"></i>
-                  <%= submit_tag "Sign In", class: "btn-link" %>
-               </center>
-            </div>
-            <% end %>
-         </div>
+<div class="panel-header">
+	<center>
+		<h3>Hello!</h3>
+	</center>
+</div>
+<div class="panel-body">            
+	<div class="login-form">
+
+		<div class="control-box">
+			<div class='col-sm-3'><label for="email" class="label-email">Login:</label></div>
+			<div class='col-sm-9'>
+				<%= email_field_tag :email, params[:email] , placeholder: "checkit@gmail.com" %>
+			</div>
+		</div>
+
+		<div class="control-box">
+			<div class='col-sm-3'><label for="password" class="label-pass">Password:</label>
+			</div>
+			<div class='col-sm-9'><%= password_field_tag :password, nil, placeholder: "At least 4 digits"  %>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="pnl-footer">
+	<center>
+		<i class="fa fa-sign-in fa-2x signin-icon" aria-hidden="true"></i>
+		<%= submit_tag "Sign In", class: "btn-link" %>
+	</center>
+</div>
+<% end %>
+

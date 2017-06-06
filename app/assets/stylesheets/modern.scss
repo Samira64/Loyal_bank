@@ -1,12 +1,8 @@
 @import "bootstrap";
-
 $border-color: #0072b0;
 $white-color: white;
-$main-font: 'Roboto',
-sans-serif;
-$open-serif-font: 'Open Sans',
-sans-serif;
-$full-width: 100%;
+$main-font: 'Roboto', sans-serif;
+$line-height: 50px;
 @mixin center-div($width) {
   width: $width;
   margin: auto;
@@ -25,38 +21,35 @@ body {
   @include center-div(900px);
 }
 
-.header-container {
-  position: relative;
-  min-height: 100px;
-}
-
 .header {
   border-bottom: 1px solid #a6bff5;
   min-height: 100px;
-  width: $full-width;
-}
-
-
-.header-title {
-  color: $white-color;
-  font-family: $main-font;
-  font-size: 25px;
-  font-weight: 100;
-  position: absolute;
-  bottom: 0px;
-}
-
-.header-nav {
-  color: $white-color;
-  font-family: $open-serif-font;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  list-style-type: none;
+  width: 100%;
+  padding-bottom: 0;
+  .header-container {
+    position: relative;
+    min-height: 100px;
+    .header-title {
+      color: $white-color;
+      font-family: $main-font;
+      font-size: 25px;
+      font-weight: 100;
+      position: absolute;
+      bottom: 0;
+    }
+    .header-nav {
+      color: $white-color;
+      font-family: 'Open Sans', sans-serif;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      list-style-type: none;
+    }
+  }
 }
 
 ul {
-  margin: 0px;
+  margin: 0;
   .header-nav-item {
     display: inline-block;
     margin-left: 20px;
@@ -70,8 +63,7 @@ ul {
 .panel {
   border-radius: 15px;
   background-color: $white-color;
-  width: $full-width;
-  margin-top: 50px;
+  width: 100%;
 }
 
 .panel-header {
@@ -83,13 +75,13 @@ ul {
 }
 
 .panel-body {
-  width: full-width;
+  width: 100%;
 }
 
 .pnl-footer {
-  width: full-width;
+  width: 100%;
   min-height: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding: 40px 0px;
   .btn-link{
     color: $border-color;
@@ -102,9 +94,7 @@ ul {
     margin-top:2px;
     vertical-align: sub;
   }
-
   input[type="button" i]{
-    
     outline: none;
   }
 }
@@ -118,22 +108,14 @@ ul {
   border: 1px solid #c8c8c8;
   border-radius: 10px;
   margin-bottom: 20px;
-  min-height: 50px;
+  height: $line-height;
+  line-height: $line-height;
   input {
+    line-height: normal;
     border: none;
-    height: 50px;
     width: 75%;
-    margin-left: 30px;
   }
-  input[type="email"] {
-    margin-left: 60px;
-  }
-  input[type="password"] {
-    margin-left: 30px;
-  }
-
-  .input:focus,
-  input {
+  input:focus {
     outline: none;
     color: #5ba1d2;
   }
@@ -142,6 +124,7 @@ ul {
     padding-left: 20px;
   }
 }
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
 }

@@ -9,5 +9,4 @@ class Company < ActiveRecord::Base
     validates :name, length: { maximum: 16 } 
     validates :name, :directors, presence: true
     validates :name, uniqueness: true
-
 end

@@ -47,8 +47,7 @@ before_action :authenticate_user
 	end
 
 	def update 
-		@company= Company.find(params[:id])
-		binding.pry	
+		@company= Company.find(params[:id])	
 		if @company.update(company_params)
 			redirect_to companies_url, notice: "The company \"#{@company.name}\" was updated sucessfully."
 		else
