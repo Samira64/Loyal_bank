@@ -1,12 +1,6 @@
 @import "bootstrap";
-$border-color: #0072b0;
-$white-color: white;
-$main-font: 'Roboto', sans-serif;
-$line-height: 50px;
-@mixin center-div($width) {
-  width: $width;
-  margin: auto;
-}
+@import "_variables.scss";
+@import "_mixins.scss";
 
 html {
   min-height: 100%;
