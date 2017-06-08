@@ -70,13 +70,14 @@ ul {
 
 .panel-body {
   width: 100%;
+  padding: 20px;
 }
 
 .pnl-footer {
   width: 100%;
   min-height: 40px;
   margin-bottom: 0;
-  padding: 40px 0px;
+  padding: 20px;
   .btn-link{
     color: $border-color;
     font-family: $main-font;
@@ -96,6 +97,7 @@ ul {
 .login-form {
   width: 80%;
   margin: 20px auto;
+  font-size: 16px;
 }
 
 .control-box {
