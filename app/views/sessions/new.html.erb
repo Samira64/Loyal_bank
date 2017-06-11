@@ -1,11 +1,11 @@
-<%= form_tag sessions_path, class: "form-horizontal" do %>
+<%= form_tag sessions_path do %>
 <div class="panel-header">
 	<center>
-		<h3>Hello!</h3>
+		<h3>Sign In</h3>
 	</center>
 </div>
 <div class="panel-body">            
-	<div class="login-form">
+	<div class="form login-form">
 
 		<div class="control-box">
 			<div class='col-sm-3'><label for="email" class="label-email">Login:</label></div>
@@ -25,6 +25,9 @@
 </div>
 <div class="pnl-footer">
 	<center>
+		<% if flash[:alert] %>
+		<div class="alert alert-danger"><%= flash[:alert] %></div>
+		<% end %>
 		<i class="fa fa-sign-in fa-2x signin-icon" aria-hidden="true"></i>
 		<%= submit_tag "Sign In", class: "btn-link" %>
 	</center>

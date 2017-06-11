@@ -70,13 +70,14 @@ ul {
 
 .panel-body {
   width: 100%;
+  padding: 20px;
 }
 
 .pnl-footer {
   width: 100%;
   min-height: 40px;
   margin-bottom: 0;
-  padding: 40px 0px;
+  padding: 20px;
   .btn-link{
     color: $border-color;
     font-family: $main-font;
@@ -92,10 +93,13 @@ ul {
     outline: none;
   }
 }
+.form{
+  margin: 20px auto;
+  font-size: 16px;
+}
 
 .login-form {
   width: 80%;
-  margin: 20px auto;
 }
 
 .control-box {
@@ -117,12 +121,10 @@ ul {
   .label-pass {
     padding-left: 20px;
   }
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
-
-input:-webkit-autofill:focus{
-  webkit-autofill: off;
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+  input:-webkit-autofill:focus{
+    webkit-autofill: off;
+  }
 }
