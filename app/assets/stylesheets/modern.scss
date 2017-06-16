@@ -38,8 +38,11 @@ ul {
       position: absolute;
       bottom: 0;
       margin-right: 100px;
-      .fa-sign-in {
+      a {
+        color: white;
+        .fa-sign-out {
         margin-left: 20px;
+      }
       }
     }
     .header-nav {
@@ -142,6 +145,9 @@ ul {
     margin-top:2px;
     vertical-align: sub;
   }
+  .fa-plus-square-o{
+    color: #165ad5;
+  }
   input[type="button" i]{
     outline: none;
   }
@@ -221,17 +227,22 @@ ul {
   tbody tr td {
     height: 100px;
     padding: 0;
+    border-top: 1px rgba(0, 114, 176, 0.5) solid;
     img {
       border-radius: 50%;
     }
   }
+  tbody tr:last-child td{
+    border-bottom: 1px rgba(0, 114, 176, 0.5) solid;
+  }
   td:first-child {
-    text-align: center;
     width: 100px;
     padding: 20px;
-
   }
-  td:nth-child(2) .company-name {
+  .company-logo {
+    text-align: center;
+  }
+  .company-name, .user-email {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 20px;
@@ -248,13 +259,12 @@ ul {
     font-size: 25px;
     letter-spacing: 3px;
   }
-  .directors {
+  .directors, .user-name {
     font-family: $main-font;
     font-size: 15px;
   }
 }
 
 .table tbody tr td {
-  vertical-align: middle;
-  border-top: 1px rgba(0, 114, 176, 0.5) solid;
+  vertical-align: middle; 
 }

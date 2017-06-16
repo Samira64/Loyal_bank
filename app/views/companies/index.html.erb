@@ -35,7 +35,7 @@
 	<table class="table">
 		<% @companies.each do |company| %>
 		<tr>
-			<td><%= image_tag company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %></td>
+			<td class="company-logo"><%= image_tag company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %></td>
 			<td>
 				<p class="company-name"><%= company.name %></p>
 				<p class="directors"><%= company.directors %></p>

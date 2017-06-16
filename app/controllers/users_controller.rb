@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 	end
 
 	def new
+		@users = User.all
 		@user = User.new
+		render layout: 'modern'
 	end
 
 	def create 
