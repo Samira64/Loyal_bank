@@ -25,9 +25,12 @@
         <ul class="header-nav">
           <li class="header-nav-item active">USERS</li>
         </ul>
-        <% elsif controller_name != "sessions" %>
+        <% elsif controller_name == "sessions" %>
         <ul class="header-nav">
           <li class="header-nav-item active">AUTHORIZE</li>
+        </ul>
+        <% else %>
+        <ul class="header-nav">
           <li class="header-nav-item">COMPANIES</li>
         </ul>
         <% end %>
@@ -35,11 +38,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
 
   <div class="container">
     <div class="row">

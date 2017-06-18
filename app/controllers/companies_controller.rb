@@ -2,8 +2,6 @@ class CompaniesController < ApplicationController
 before_action :authenticate_user
 
 	def index
-		
-		
 		# check if the query string contains this param. if so, it means a filter is selected
 		@has_filter = params["company_name"].present?
 		@list = Company.select(:name).distinct.order(:name)
@@ -13,7 +11,6 @@ before_action :authenticate_user
 			@companies = Company.where("name = ?", selected_company_name)
 		else	
 			@companies = Company.all
-			
 		end	
 		render layout: 'modern'
 	end
