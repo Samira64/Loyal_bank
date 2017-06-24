@@ -12,6 +12,7 @@ body {
 }
 
 ul {
+  margin: 0;
   li {
     margin: 0;
     padding: 0;
@@ -41,33 +42,35 @@ ul {
       a {
         color: white;
         .fa-sign-out {
-        margin-left: 20px;
+          margin-left: 20px;
+        }
       }
-      }
-    }
-    .header-nav {
-      color: $white-color;
-      font-family: 'Open Sans', sans-serif;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      list-style-type: none;
     }
   }
 }
 
-ul {
-  margin: 0;
+.header-nav {
+  color: $white-color;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  list-style-type: none;
   .header-nav-item {
     display: inline-block;
     margin-left: 20px;
     font-size: 18px;
-  }
-  .header-nav-item.active {
-    border-bottom: 3px solid white;
+    &.active {
+      border-bottom: 3px solid white;
+    }
+    a, a:focus, a:hover, a:visited {
+      color: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
   }
 }
-
+  
 .panel {
   border-radius: 15px;
   background-color: $white-color;
@@ -79,25 +82,21 @@ ul {
   padding: 0 20px;
 }
 
-.panel-header  {
+.panel-header {
   h3 {
     font-family: $main-font;
   }
   .header-col {
     height: 100px;
     padding: 30px;
-  }
-  .header-title {
-    font-family: $main-font;
-    font-weight: 100;
-    color: gray;
-    font-size: 24px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    a{
-      color: white;
-      margin-left: 5px;
+    .header-title {
+      font-family: $main-font;
+      font-weight: 100;
+      color: gray;
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   .header-links {
@@ -147,6 +146,11 @@ ul {
   }
   .fa-plus-square-o{
     color: #165ad5;
+  }
+  .fa-floppy-o {
+    color: #129ac4;
+    //margin-top: 2px;
+    //vertical-align: baseline;
   }
   input[type="button" i]{
     outline: none;
@@ -201,9 +205,12 @@ ul {
   height: $line-height;
   line-height: $line-height;
   input {
-    line-height: normal;
     border: none;
     width: 75%;
+    line-height: normal;
+  }
+  #logo-input {
+    padding: 15px 0;
   }
   input:focus {
     outline: none;

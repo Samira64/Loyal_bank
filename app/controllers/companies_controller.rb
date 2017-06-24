@@ -17,6 +17,7 @@ before_action :authenticate_user
 	
 	def new  
 		@company = Company.new
+		render layout: 'modern'
 	end
 
 	def create
