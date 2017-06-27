@@ -17,36 +17,44 @@
     <div class="container">
       <div class="header-container">
         <div class="header-title">
-        <span>LOYAL BANK</span>
+          <span>LOYAL BANK</span>
           <a href="<%= logout_url %>"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
         </div>
 
         <ul class="header-nav">
+
           <% if controller_name == "sessions" %>
           <li class="header-nav-item active">AUTHORIZE</li>
-          <% else %>
-          <li class="header-nav-item <%= "active" if controller_name == 'companies' && action_name == 'index' %>" >
-             <a href="<%= companies_url %>"> COMPANIES </a>
-            </li>
-          <li class="header-nav-item <%= "active" if controller_name == 'users' %>" >
-            <a href="<%= users_url %>"> USERS </a>
-            </li>
-          <% if controller_name == "companies" && action_name == "new" %>
-          <li class="header-nav-item active" >CREATE COMPANY</li>
-          <% end %>
-          <% end %>
-        </ul>
-      </div>
+          <% elsif controller_name == 'companies' %>
+          <li class="header-nav-item <%= "active" if action_name == 'index' %>" >
+          <a href="<%= companies_url %>"> COMPANIES </a>
+         </li>
+              <% if action_name == "new" %>
+              <li class="header-nav-item active">CREATE COMPANY</li>
+              <% end %>
+              <% if action_name == "show" %>
+              <li class="header-nav-item active">
+              <%= @company.name.upcase %>
+              <a href="#"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+              </li>
+              <% end %>     
+         <% else %>
+         <li class="header-nav-item <%= "active" if controller_name == 'users' %>" >
+          <a href="<%= users_url %>"> USERS </a>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="panel">
-        <%= yield %>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="panel">
+      <%= yield %>
     </div>
   </div>
+</div>
 </body>
 </html>
 

@@ -42,6 +42,7 @@ before_action :authenticate_user
 		else
 			@bank_accounts= @company_accounts
 		end
+		render layout: 'modern'
 	end
 
 	def edit
