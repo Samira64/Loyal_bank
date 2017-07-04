@@ -1,33 +1,41 @@
 class BankAccountsController < ApplicationController
 	before_action :current_bank_account, only: [:show, :edit, :update, :destroy]
 
+	def index
+		redirect_to action: :new	
+	end	
+
 	def new
 		@company = Company.find(params[:company_id])
 		@bank_account = BankAccount.new
+		render layout: 'modern'
 	end
 
 	def create
 		@company = Company.find(params[:company_id])
 		@bank_account = @company.bank_accounts.create(bank_account_params)
 		if @bank_account.save
-			redirect_to company_bank_account_url(@company, @bank_account), 
-			notice: "The bank account \"#{@bank_account.bank_name}\" was built successfully."
+			redirect_to company_url(@company), notice: "The bank account \"#{@bank_account.bank_name}\" was built successfully."
 		else
-			render "new"
+			render "new", layout: 'modern'
 		end
 	end
 
-	def show	
+	def show
+		@company= Company.find(params[:company_id])
+		@bank_account = @company.bank_accounts.find(params[:id])
+	    render layout: 'modern'	
 	end
 
 	def edit
+		render layout: 'modern'
 	end
 
 	def update	
 			if @bank_account.update(bank_account_params)
 				redirect_to company_bank_account_url, notice: "The bank account \"#{@bank_account.bank_name}\" was successfully updated."  
 			else
-		       render :edit 
+		       render "edit", layout: 'modern'
 			end
 	end
 
