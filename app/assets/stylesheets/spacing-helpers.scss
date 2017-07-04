@@ -1,6 +1,7 @@
 $spaceM: 10px;
 $spaceL: 20px;
 $spaceS: 5px;
+$spaceXL: 30px;
 
   .ptn, .pvn, .pan { padding-top:     0 !important; }
   .pts, .pvs, .pas { padding-top:     $spaceS !important; }
@@ -18,6 +19,7 @@ $spaceS: 5px;
   .pls, .phs, .pas { padding-left:    $spaceS !important; }
   .plm, .phm, .pam { padding-left:    $spaceM !important; }
   .pll, .phl, .pal { padding-left:    $spaceL !important; }
+  .plxl, .phxl, .paxl { padding-left:    $spaceXL !important; }
   .mtn, .mvn, .man { margin-top:      0 !important; }
   .mts, .mvs, .mas { margin-top:      $spaceS !important; }
   .mtm, .mvm, .mam { margin-top:      $spaceM !important; }
