@@ -102,33 +102,33 @@ hr {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);  
-   }
- }
- .header-links {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  margin-right: 20px;
-  font-size: 18px;
-  li {
-    list-style-type: none;
-    display: inline;
-    font-family: $main-font;
-    margin-left: 10px;
-    a {
-      text-decoration: none;
-    }
-    .fa {
-      padding: 5px;
-      margin-left: 5px;
-      color: #165ad5;
-    }
-    .fa-trash-o {
-      color: #de0000;
     }
   }
- }
+  .header-links {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin-right: 20px;
+    font-size: 18px;
+    li {
+      list-style-type: none;
+      display: inline;
+      font-family: $main-font;
+      margin-left: 10px;
+      a {
+        text-decoration: none;
+      }
+      .fa {
+        padding: 5px;
+        margin-left: 5px;
+        color: #165ad5;
+      }
+      .fa-trash-o {
+        color: #de0000;
+      }
+    }
+  }
 }
 
 .panel-body {
@@ -161,8 +161,11 @@ hr {
   input[type="button" i]{
     outline: none;
   }
-  #add-new-account{
+  .link {
     font-size: 18px;
+  }
+  a {
+    text-decoration: none;
   }
 }
 
@@ -214,10 +217,13 @@ hr {
   margin-bottom: 20px;
   height: $line-height;
   line-height: $line-height;
-  input {
+  input{
     border: none;
     width: 75%;
     line-height: normal;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    width: initial;
   }
   #logo-input {
     padding: 15px 0;
@@ -269,12 +275,14 @@ hr {
     padding: 20px;
     text-align: center;
   }
-  
   .company-name, .user-email {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 20px;
     color: #4e4e4e ;
+    a {
+      color: black;
+    }
   }
   td.action {
     text-align: right;
