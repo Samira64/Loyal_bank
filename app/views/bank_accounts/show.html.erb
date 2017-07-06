@@ -1,43 +1,75 @@
-<div class="page-header">
-	<h1>Bank Accounts for <%= @bank_account.company.name %></h1>
+<div class="panel-header">
+	<div class="row">	
+		<div class="col-sm-6 header-col">
+			<p class="header-title">
+				<%= image_tag @bank_account.logo.url(:small), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %>
+				<span class="mlm"><%= @bank_account.bank_name.capitalize %></span>
+			</p>
+		</div>
+		<div class="col-sm-6 header-col">
+			<ul class="header-links">
+				<li>
+					<a href="/companies/<%= @company.id %>/bank_accounts/<%= @bank_account.id %>" data-confirm="Are you are you want to delete this bank account?" rel="nofollow" data-method="delete">
+						<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+					<a href="/companies/<%= @company.id %>/bank_accounts/<%= @bank_account.id %>/edit">Edit Bank Account</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 
-<p><%= image_tag @bank_account.logo.url(:small) %></p>
+<div class="panel-body">
+	<div class="pll prl">
+		<table class="table company">
+			<tr>
+				<td>
+					<label>Bank Name:</label> 
+					<span class="info"><%= @bank_account.bank_name.capitalize %></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Account Number:</label>
+					<span class="info"><%= @bank_account.account_number.capitalize %></span>
 
-<p>
-	<strong>Bank Name:</strong>
-	<%= @bank_account.bank_name %>
-</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Currency:</label>
+					<span class="info"><%= @bank_account.currency %></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Account_type:</label>
+					<span class="info"><%= @bank_account.account_type %></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Swift Code:</label>
+					<span class="info"><%= @bank_account.swift_code %></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Address:</label>
+					<span class="info"><%= @bank_account.bank_address %></span>
+				</td>
+			</tr>
 
-<p><strong>Account Number:</strong>
-	<%= @bank_account.account_number %>
-</p>
+		</table>
+	</div>
+	<hr class="mtn mbn">
 
-<p>
-	<strong>Currency:</strong>
-	<%= @bank_account.currency %>
-</p>
+	<div class="pnl-footer">
+		<center>
+			<%= link_to "Back to #{@company.name}", @bank_account.company, class: "link" %>
+		</center>
+	</div>
 
-<p>
-	<strong>Swift Code:</strong>
-	<%= @bank_account.swift_code %>
-</p>
-
-<p>
-	<strong>Account Type:</strong>
-	<%= @bank_account.account_type %>
-</p>
-
-<p>
-	<strong>Bank Address:</strong>
-	<%= @bank_account.bank_address %>
-</p>
-
-<div class="edit-delete-buttons">
-	<%= link_to 'Edit', edit_company_bank_account_path(@company, @bank_account), class: 'btn btn-success' %> 
-	<%= link_to 'Delete', company_bank_account_path(@company, @bank_account), class: 'btn btn-danger', method: :delete, data: {confirm: "Are you sure you want to delete this bank account?"} %>
-</div>	
-
-<ul class="pager back-button">
-	<li><%= link_to 'Back To Current Company', @bank_account.company %></li>
-</ul>
