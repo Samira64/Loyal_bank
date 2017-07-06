@@ -38,7 +38,7 @@
 		<tr>
 			<td class="company-logo"><%= image_tag company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %></td>
 			<td>
-				<p class="company-name"><%= company.name %></p>
+				<p class="company-name"><a href="<%= company_url(company.id) %>"><%= company.name %></a></p>
 				<p class="directors"><%= company.directors %></p>
 			</td>
 			<td class="action"><a href="#">...</a></td>
