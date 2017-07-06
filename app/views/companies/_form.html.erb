@@ -1,46 +1,47 @@
 <div class="panel-body"> 
-<div class="form">
-	<%= form_for @company, html: { multipart: true, class: "form-horizontal" } do |f| %>
-<% if @company.errors.any? %>
-<div class= "alert alert-danger">
-	<strong>
-		<%= pluralize(@company.errors.count, "error") %>
-		prevented you from registering:
-	</strong>
-	<ul>
-		<% @company.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-        <% end %>
-	</ul>
-</div>
-<% end %>
+	<div class="form">
+		<%= form_for @company, html: { multipart: true, class: "form-horizontal" } do |f| %>
+		<% if @company.errors.any? %>
+		<div class= "alert alert-danger">
+			<strong>
+				<%= pluralize(@company.errors.count, "error") %>
+				prevented you from registering:
+			</strong>
+			<ul>
+				<% @company.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
 
-<div class="control-box">
-	<%= f.label :logo, 'Logo:', class: "col-sm-3" %>
-	<div class="col-sm-9"><%= f.file_field :logo, id: "logo-input" %></div>
-</div>
+		<div class="control-box">
+			<%= f.label :logo, 'Logo:', class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.file_field :logo, id: "logo-input" %></div>
+		</div>
 
-<div class= "control-box">
-	<%= f.label :name, 'Name:', class: "col-sm-3" %>
-	<div class="col-sm-9"><%= f.text_field :name, placeholder: "New name..." %></div>
-</div>
+		<div class= "control-box">
+			<%= f.label :name, 'Name:', class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :name, placeholder: "New name..." %></div>
+		</div>
 
-<div class="control-box">
-	<%= f.label :directors, 'Directors:', class:"col-sm-3" %>
-	<div class="col-sm-9"><%= f.text_field :directors, placeholder: "Directors' name..." %></div>
-</div>
+		<div class="control-box">
+			<%= f.label :directors, 'Directors:', class:"col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :directors, placeholder: "Directors' name..." %></div>
+		</div>
 
-<div class= "control-box">
-	<%= f.label :address, 'Address:', class:"col-sm-3" %>
-	<div class="col-sm-9"><%= f.text_field :address, placeholder: "State, street, etc..." %></div>
-</div>
-</div>
+		<div class= "control-box">
+			<%= f.label :address, 'Address:', class:"col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :address, placeholder: "State, street, etc..." %></div>
+		</div>
+
+	</div>
 </div>
 
 <div class="pnl-footer">
-<center>
-<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i>
-<%= f.submit "Add New Company", class: "btn-link submit-button" %>
-</center>
+	<center>
+		<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i>
+		<%= f.submit class: "btn-link submit-button" %>
+	</center>
 </div>
 <% end %>

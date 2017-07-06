@@ -25,7 +25,7 @@ before_action :authenticate_user
 		if @company.save
 			redirect_to company_url(@company), notice: "The company   \"#{@company.name}\"   was built successfully."
 		else
-			render "new"
+			render "new", layout: 'modern'
 		end
 	end
 
@@ -47,6 +47,7 @@ before_action :authenticate_user
 
 	def edit
 		@company= Company.find(params[:id])
+		render layout: 'modern'
 	end
 
 	def update 
@@ -54,7 +55,7 @@ before_action :authenticate_user
 		if @company.update(company_params)
 			redirect_to companies_url, notice: "The company \"#{@company.name}\" was updated sucessfully."
 		else
-			render "edit"
+			render "edit", layout: 'modern'
 		end
 	end
 
