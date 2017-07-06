@@ -10,6 +10,8 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
 </head>
 <body>
 
@@ -25,36 +27,60 @@
 
           <% if controller_name == "sessions" %>
           <li class="header-nav-item active">AUTHORIZE</li>
-          <% elsif controller_name == 'companies' %>
-          <li class="header-nav-item <%= "active" if action_name == 'index' %>" >
-          <a href="<%= companies_url %>"> COMPANIES </a>
-         </li>
-              <% if action_name == "new" %>
-              <li class="header-nav-item active">CREATE COMPANY</li>
-              <% end %>
-              <% if action_name == "show" %>
-              <li class="header-nav-item active">
-              <%= @company.name.upcase %>
-              <a href="#"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
-              </li>
-              <% end %>     
-         <% else %>
-         <li class="header-nav-item <%= "active" if controller_name == 'users' %>" >
-          <a href="<%= users_url %>"> USERS </a>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="panel">
-      <%= yield %>
+          <% elsif controller_name == 'companies' || controller_name == 'bank_accounts' || controller_name == 'users' %>
+          <li class="header-nav-item <%= "active" if controller_name == 'companies' && action_name == 'index' %>" >
+            <a href="<%= companies_url %>"> COMPANIES </a>
+          </li>
+          <li class="header-nav-item <%= "active" if controller_name == 'users' %>" >
+          <a href="<%= users_url %>"> USERS </a>
+          </li>
+
+          <% if controller_name == 'companies' && action_name == "new" %>
+          <li class="header-nav-item active">
+            CREATE COMPANY 
+            <a href="/companies"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <% end %>
+
+          <% if controller_name == 'companies' && action_name == "edit" %>
+          <li class="header-nav-item active">
+            EDIT <%= @company.name.upcase %>
+            <a href="/companies/<%= @company.id %>"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <% end %>
+
+          <% if controller_name == 'bank_accounts' && action_name == "new" %>
+          <li class="header-nav-item active">
+            CREATE BANK ACCOUNT
+            <a href="/companies/<%= @company.id %>"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <% end %>
+
+          <% if controller_name == 'bank_accounts' && action_name == "show" || controller_name == "bank_accounts" && action_name == "edit" %>
+          <li class="header-nav-item active">
+            <%= @bank_account.bank_name.upcase %>
+            <a href="<%= company_url(@bank_account.company.id) %>"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <% end %>
+
+          <% else %>
+          <li class="header-nav-item <%= "active" if controller_name == 'users' %>" >
+            <a href="<%= users_url %>"> USERS </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="panel">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
