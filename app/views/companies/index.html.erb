@@ -12,7 +12,6 @@
 				<li>	
 					<i class="fa fa-plus-square-o" aria-hidden="true"></i>
 					<a href="/companies/new">Add New Company</a>
-					
 				</li>
 			</ul>
 		</div>
@@ -33,10 +32,10 @@
 		</div>
 	</div>
 
-	<table class="table">
+	<table class="table table-border-bottom">
 		<% @companies.each do |company| %>
 		<tr>
-			<td class="company-logo"><%= image_tag company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %></td>
+			<td class="company-logo"><%= image_tag(company.logo.url(:thumb), size: "40", class: "img-rounded logo-img") %></td>
 			<td>
 				<p class="company-name"><a href="<%= company_url(company.id) %>"><%= company.name %></a></p>
 				<p class="directors"><%= company.directors %></p>

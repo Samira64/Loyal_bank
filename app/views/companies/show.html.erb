@@ -2,7 +2,7 @@
 	<div class="row">	
 		<div class="col-sm-6 header-col">
 			<p class="header-title">
-				<%= image_tag @company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %>
+				<%= image_tag(@company.logo.url(:thumb), size: "40", class: "img-rounded logo-img") %>
 				<span class="mlm"><%= @company.name.capitalize %></span>
 			</p>
 		</div>
@@ -48,9 +48,23 @@
 		</table>
 	</div>
 	<hr class="mtn mbn">
-	<% @company.bank_accounts.each do |bank_account| %>
-	<a href="<%=company_bank_account_url(@company, bank_account) %>" class="mam"> <%= bank_account.bank_name %> </a> <br>
-	<% end %>
+	
+	<h3 class="list-header pll">BANK ACCOUNTS</h3>
+	<table class="table">
+		<% @company.bank_accounts.each do |bank_account| %>
+		<tr>
+			<td class="pll">
+				<div class="capsule-with-image">
+					<%= image_tag(bank_account.logo.url(:thumb), size:"40", class: "img-rounded logo")  %>
+					<span class="capsule primary-capsule"><%= bank_account.bank_name.upcase %></span>
+				</div>
+				<span class="capsule secondary-capsule"><%= bank_account.currency %></span>
+				<span class="capsule secondary-capsule"><%= bank_account.account_number %></span>
+			</td>
+			<td class="action"><a href="#">...</a></td>
+		</tr>
+		<% end %>
+	</table>
 </div>
 
 <div class="pnl-footer">
@@ -59,8 +73,6 @@
 		<a href="/companies/<%= @company.id %>/bank_accounts/new" class="link"> Add New Bank Account</a>
 	</center>
 </div>
-
-
 
 
 

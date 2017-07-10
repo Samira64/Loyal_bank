@@ -244,11 +244,21 @@ hr {
   }
 }
 
+.list-header{
+  font-family: $main-font;
+  font-weight: 100;
+  color: gray;
+  font-size: 24px;
+}
+
+.table-border-bottom tbody tr td {
+  border-bottom: 1px $border-color solid;
+}
+
 .table {
   tbody tr td {
     height: 80px;
     padding: 0;
-    border-bottom: 1px $border-color solid;
     border-top: none;
     img {
       border-radius: 50%;
@@ -299,6 +309,39 @@ hr {
     font-family: $main-font;
     font-size: 15px;
   }
+}
+
+.capsule {
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px 25px;
+}
+
+.primary-capsule {
+  border: 1px solid $red-color;
+  background-color: $red-color;
+  color: white;
+}
+
+.secondary-capsule {
+  border: 1px solid $red-color;
+  color: $red-color;
+}
+
+.capsule-with-image {
+  position: relative;
+  display: inline;
+  .capsule{
+   margin-left: 20px;
+ }
+ .logo {
+   position: absolute;
+   z-index: +1;
+   top: -12px;
+   border: 2px solid $red-color;
+   background-color: #ef4e4e;
+   padding: 2px;
+ }
 }
 
 .table tbody tr td {
