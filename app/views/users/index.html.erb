@@ -16,12 +16,14 @@
 </div>
 
 <div class="panel-body">
-	<table class="table">
+	<table class="table table-bordered">
 		<% @users.each do |user| %>
 		<tr>
 			<td>
+			
 				<p class="user-email plxl"><%= user.email %></p>
 				<p class="user-name plxl"><%= user.name %></p>
+			
 			</td>
 			<td class="action"><a href="#">...</a></td>
 		</tr>

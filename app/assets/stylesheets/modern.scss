@@ -251,15 +251,13 @@ hr {
   font-size: 24px;
 }
 
-.table-border-bottom tbody tr td {
-  border-bottom: 1px $border-color solid;
-}
-
 .table {
   tbody tr td {
     height: 80px;
     padding: 0;
     border-top: none;
+    border-left: none;
+    border-right: none;
     img {
       border-radius: 50%;
     }
@@ -286,7 +284,6 @@ hr {
     text-align: center;
   }
   .company-name, .user-email {
-    margin-bottom: 5px;
     font-weight: bold;
     font-size: 20px;
     color: #4e4e4e ;
@@ -309,6 +306,14 @@ hr {
     font-family: $main-font;
     font-size: 15px;
   }
+}
+
+.company-name, .user-email, .user-name, .directors {
+  margin-bottom: 0px;
+}
+
+.table-bordered tbody tr td {
+  border-bottom: 1px $border-color solid;
 }
 
 .capsule {
@@ -347,4 +352,3 @@ hr {
 .table tbody tr td {
   vertical-align: middle; 
 }
-

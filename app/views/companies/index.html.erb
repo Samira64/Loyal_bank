@@ -32,7 +32,7 @@
 		</div>
 	</div>
 
-	<table class="table table-border-bottom">
+	<table class="table table-bordered">
 		<% @companies.each do |company| %>
 		<tr>
 			<td class="company-logo"><%= image_tag(company.logo.url(:thumb), size: "40", class: "img-rounded logo-img") %></td>
