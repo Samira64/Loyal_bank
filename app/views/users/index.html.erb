@@ -1,0 +1,78 @@
+<div class="panel-header">
+	<div class="row">	
+		<div class="col-sm-6 header-col">
+			<p class="header-title"> <ABBR>All Users</ABBR></p>
+		</div>
+		<div class="col-sm-6 header-col">
+			<ul class="header-links">
+				<li>
+					<i class="fa fa-print" aria-hidden="true"></i>
+					<a href="#">Print</a>
+					
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="panel-body">
+	<table class="table table-bordered">
+		<% @users.each do |user| %>
+		<tr>
+			<td>
+			
+				<p class="user-email plxl"><%= user.email %></p>
+				<p class="user-name plxl"><%= user.name %></p>
+			
+			</td>
+			<td class="action"><a href="#">...</a></td>
+		</tr>
+		<% end %>
+	</table>
+
+	<div class="form">
+
+		<div class='col-md-4'>
+			<div class="control-box">
+				
+				<div class='col-sm-4'><label for="email" class="label-email">Login:</label></div>
+				<div class='col-sm-8'>
+					<%= email_field_tag :email, params[:email] , placeholder: "checkit@gmail.com" %>
+				</div>
+			</div>
+		</div>
+
+		<div class='col-md-4'>
+			<div class="control-box">
+				
+				<div class='col-sm-5'><label for="password" class="label-pass">Password:</label>
+				</div>
+				<div class='col-sm-7'><%= password_field_tag :password, nil, placeholder: "At least 4 digits"  %>
+				</div>
+			</div>
+		</div>
+
+		<div class='col-md-4'>
+			<div class="control-box">
+				
+				<div class='col-sm-4'><label for="name" class="label-name">Name:</label>
+				</div>
+				<div class='col-sm-8'><%= text_field_tag :name, nil, placeholder: "Full Name"  %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="pnl-footer">
+	<center>
+		<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i>
+		<%= submit_tag "Add New User", class: "btn-link" %>
+	</center>
+</div>
+
+
+
+
+

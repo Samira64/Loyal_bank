@@ -1,0 +1,359 @@
+@import "bootstrap";
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "spacing-helpers.scss";
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom right, #1567b9, #baecc7);
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+hr {
+  border-top: 1px solid $border-color;
+}
+
+.container {
+  @include center-div(900px);
+}
+
+.header {
+  border-bottom: 1px solid #a6bff5;
+  min-height: 100px;
+  width: 100%;
+  padding-bottom: 0;
+  .header-container {
+    position: relative;
+    min-height: 100px;
+    .header-title {
+      color: $white-color;
+      font-family: $main-font;
+      font-size: 25px;
+      font-weight: 100;
+      position: absolute;
+      bottom: 0;
+      margin-right: 100px;
+      a {
+        color: white;
+        .fa-sign-out {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.header-nav {
+  color: $white-color;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  list-style-type: none;
+  .header-nav-item {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 18px;
+    &.active {
+      border-bottom: 3px solid white;
+    }
+    a, a:focus, a:hover, a:visited {
+      color: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+}
+
+.panel {
+  border-radius: 15px;
+  background-color: $white-color;
+  width: 100%;
+}
+
+.panel-header {
+  border-bottom: 1px $border-color solid;
+  padding: 0 20px;
+}
+
+.panel-header {
+  h3 {
+    font-family: $main-font;
+  }
+  .header-col {
+    height: 100px;
+    padding: 30px;
+    .header-title {
+      font-family: $main-font;
+      font-weight: 100;
+      color: gray;
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);  
+    }
+  }
+  .header-links {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin-right: 20px;
+    font-size: 18px;
+    li {
+      list-style-type: none;
+      display: inline;
+      font-family: $main-font;
+      margin-left: 10px;
+      a {
+        text-decoration: none;
+      }
+      .fa {
+        padding: 5px;
+        margin-left: 5px;
+        color: #165ad5;
+      }
+      .fa-trash-o {
+        color: #de0000;
+      }
+    }
+  }
+}
+
+.panel-body {
+  width: 100%;
+  padding: 0px;
+}
+
+.pnl-footer {
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 0;
+  padding: 20px;
+  .btn-link{
+    color: $border-color;
+    font-family: $main-font;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .signin-icon{
+    color: #129ac4;
+    margin-top:2px;
+    vertical-align: sub;
+  }
+  .fa-plus-square-o{
+    color: #165ad5;
+  }
+  .fa-floppy-o {
+    color: #129ac4;
+  }
+  input[type="button" i]{
+    outline: none;
+  }
+  .link {
+    font-size: 18px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.filters {
+  height: 100px;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 1px $border-color solid;
+  .sort {
+    color: black;
+    text-decoration: none;
+    .fa-sort-alpha-asc {
+      color: #3fbec7;
+      padding: 5px;
+    }
+    .fa-sort-alpha-desc {
+      color: gray;
+      margin-right: 30px;
+    }
+  }
+  .currency-filter {
+    select {
+      background-color: white;
+      border-color: #3fbec7;
+      -webkit-appearance: none;
+      -webkit-border-radius: 50px;
+      width: 100px;
+      height: 30px;
+    }
+  }
+}
+
+.form {
+  padding: 20px;
+  margin: 20px auto;
+  font-size: 16px;
+}
+
+.login-form {
+  width: 80%;
+}
+
+.control-box {
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: $line-height;
+  line-height: $line-height;
+  input{
+    border: none;
+    width: 75%;
+    line-height: normal;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    width: initial;
+  }
+  #logo-input {
+    padding: 15px 0;
+  }
+  input:focus {
+    outline: none;
+    color: #5ba1d2;
+  }
+  .label-email,
+  .label-pass {
+    padding-left: 20px;
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+  input:-webkit-autofill:focus{
+    webkit-autofill: off;
+  }
+}
+
+.list-header{
+  font-family: $main-font;
+  font-weight: 100;
+  color: gray;
+  font-size: 24px;
+}
+
+.table {
+  tbody tr td {
+    height: 80px;
+    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    img {
+      border-radius: 50%;
+    }
+    label{
+      @extend .company-name;
+      margin-right: 20px;
+    }
+    .info{
+      font-size: 20px;
+      padding: 5px 10px;
+      color: gray;
+    }
+    .director-bordered {
+      border: 1px $border-color solid;
+      border-radius: 25px; 
+    }
+  }
+  &.company{
+    tbody tr td{
+      border-bottom: 1px lightgray solid;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+  .company-logo {
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+  }
+  .company-name, .user-email {
+    font-weight: bold;
+    font-size: 20px;
+    color: #4e4e4e ;
+    a {
+      color: black;
+    }
+  }
+  td.action {
+    text-align: right;
+    padding-right: 30px;
+  }
+  a {
+    text-decoration: none;
+    color: #3dbdc6;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .directors, .user-name {
+    font-family: $main-font;
+    font-size: 15px;
+  }
+}
+
+.company-name, .user-email, .user-name, .directors {
+  margin-bottom: 0px;
+}
+
+.table-bordered tbody tr td {
+  border-bottom: 1px $border-color solid;
+}
+
+.capsule {
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px 25px;
+}
+
+.primary-capsule {
+  border: 1px solid $red-color;
+  background-color: $red-color;
+  color: white;
+}
+
+.secondary-capsule {
+  border: 1px solid $red-color;
+  color: $red-color;
+}
+
+.capsule-with-image {
+  position: relative;
+  display: inline;
+  .capsule{
+   margin-left: 20px;
+ }
+ .logo {
+   position: absolute;
+   z-index: +1;
+   top: -12px;
+   border: 2px solid $red-color;
+   background-color: #ef4e4e;
+   padding: 2px;
+ }
+}
+
+.table tbody tr td {
+  vertical-align: middle; 
+}

@@ -1,58 +1,72 @@
-<%= form_for [@company, @bank_account], html: { multipart: true, class: "form-horizontal"} do |f| %>
-<% if @bank_account.errors.any? %>
-<div class= "alert alert-danger">
-	<strong>
-		<%= pluralize(@bank_account.errors.count, "error") %>
-		prevented you from registering:
-	</strong>
-	<ul>
-		<% @bank_account.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
+<div class="panel-body"> 
+	<div class="form">
+		<%= form_for [@company, @bank_account], html: { multipart: true, class: "form-horizontal" } do |f| %>
+		<% if @bank_account.errors.any? %>
+		<div class= "alert alert-danger">
+			<strong>
+				<%= pluralize(@bank_account.errors.count, "error") %>
+				prevented you from registering:
+			</strong>
+			<ul>
+				<% @bank_account.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
 		<% end %>
-	</ul>
-</div>
-<% end %>
 
-<div class="form-group">
-	<%= f.label :logo, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f.file_field :logo, class: "form-control" %></div>
-</div>
 
-<div class="form-group">
-	<%= f.label :bank_name, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f.text_field :bank_name, class: "form-control" %>
-	</div>
-</div>
 
-<div class="form-group">
-	<%= f.label :currency, class: "control-label col-sm-2" %>
-	<div class="col-sm-2 ">
-	<%= f.select :currency, ['USD', 'AED', 'EUR', 'IRI', 'MYR', 'GBP', 'JPY'] %>
-	</div>
-</div>
+		<div class="control-box">
+			<%= f.label :logo, "Logo:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.file_field :logo, id: "logo-input" %></div>
+		</div>
 
-<div class="form-group">
-	<%= f.label :account_type, class: "control-label col-sm-2" %>
-	<div class="col-sm-3">
-		<%= f.radio_button :account_type, "current_account" %> <%= f.label "account_type_current_account", "Current account", class: "radio-button" %><br>
-		<%= f.radio_button :account_type, "saving_account" %> <%= f.label "account_type_saving_account", "Saving account", class: "radio-button" %><br>
-		<%= f.radio_button :account_type, "other" %> <%= f.label "account_type_other", "Other", class: "radio-button" %>
-	</div>
-</div>
+		<div class="control-box">
+			<%= f.label :bank_name, "Bank Name:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :bank_name, placeholder: "Name..." %></div>
+		</div>
 
-<div class= "form-group">
-	<%= f.label :account_number, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f.text_field :account_number, class: "form-control" %></div>
-</div>
+		<div class="control-box">
+			<%= f.label :currency, "Currency:", class: "col-sm-3" %>
+			<div class="col-sm-9">
+				<%= f.select :currency, ['USD', 'AED', 'EUR', 'IRI', 'MYR', 'GBP', 'JPY'] %>
+			</div>
+		</div>
 
-<div class="form-group">
-	<%= f.label :swift_code, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f.text_field :swift_code, class: "form-control" %></div>
-</div>
-<div class= "form-group">
-	<%= f.label :password, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= f. password_field :password, class: "form-control" %></div>
-</div>
+		<div class="control-box">
+			<%= f.label :account_type, "Account Type:", class: "col-sm-3" %>
+			<div class="col-sm-9">
+				<%= f.radio_button :account_type, "current_account" %> Current account
+				<%= f.radio_button :account_type, "saving_account", class: 'mll' %> Saving account
+				<%= f.radio_button :account_type, "other", class: 'mll' %> Other
+			</div>
+		</div>
 
-<%= f.submit  class: "btn btn-primary submit-button" %>
-<% end %>
+		<div class="control-box">
+			<%= f.label :account_number, "Account Number:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :account_number, placeholder: "Account number..." %></div>
+		</div>
+
+		<div class="control-box">
+			<%= f.label :swift_code, "Swift Code:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :swift_code, placeholder: "Swift code" %></div>
+		</div>
+
+		<div class="control-box">
+			<%= f.label :password, "password:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f. password_field :password, placeholder: "Password" %></div>
+		</div>
+
+		<div class="control-box">
+			<%= f.label :bank_address, "Account Address:", class: "col-sm-3" %>
+			<div class="col-sm-9"><%= f.text_field :bank_address, placeholder: "State, street, etc..." %></div>
+		</div>
+
+		<div class="pnl-footer">
+			<center>
+				<i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i>
+				<%= f.submit class: "btn-link submit-button" %>
+			</center>
+		</div>
+		<% end %>

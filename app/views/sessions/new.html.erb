@@ -1,18 +1,36 @@
-<div class="page-header">
-<h1>Log In</h1>
+<div class="panel-header">
+	<center>
+		<h3>Sign In</h3>
+	</center>
 </div>
+<div class="panel-body">            
+	<div class="form login-form">
+	<%= form_tag sessions_path do %>
 
-<%= form_tag sessions_path, class: "form-horizontal" do %>
+		<div class="control-box">
+			<div class='col-sm-3'><label for="email" class="label-email">Login:</label></div>
+			<div class='col-sm-9'>
+				<%= email_field_tag :email, params[:email] , placeholder: "checkit@gmail.com" %>
+			</div>
+		</div>
 
-<div class="form-group">
-	<%= label_tag :email,nil, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= email_field_tag :email, params[:email], class: "form-control" %></div>
+		<div class="control-box">
+			<div class='col-sm-3'><label for="password" class="label-pass">Password:</label>
+			</div>
+			<div class='col-sm-9'><%= password_field_tag :password, nil, placeholder: "At least 4 digits"  %>
+			</div>
+		</div>
+
+	</div>
 </div>
-
-<div class="form-group">
-	<%= label_tag :password, nil, class: "control-label col-sm-2" %>
-	<div class="col-sm-3"><%= password_field_tag :password, nil,class: "form-control"  %></div>
+<div class="pnl-footer">
+	<center>
+		<% if flash[:alert] %>
+		<div class="alert alert-danger"><%= flash[:alert] %></div>
+		<% end %>
+		<i class="fa fa-sign-in fa-2x signin-icon" aria-hidden="true"></i>
+		<%= submit_tag "Sign In", class: "btn-link" %>
+	</center>
 </div>
-
-<%= submit_tag "Log In", class: "btn btn-primary login-button submit-button" %>
 <% end %>
+

@@ -1,9 +1,19 @@
-<div class="page-header">
-	<h3>New Company</h3>
-</div>
+ <div class="panel-header">
+ <div class="row">
+      <div class="col-sm-6 header-col">
+         <p class="header-title"> Create New Company</p>
+      </div>
+      <div class="col-sm-6 header-col">
+         <ul class="header-links">
+            <li>
+               <a href="<%= companies_url %>">Cancel</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+ </div>
 
 <%= render 'form' %>
 
-<ul class="pager back-button">
-	<li><a href="/companies" role="button"> Back To Companies </a></li>
-</ul>
+
+

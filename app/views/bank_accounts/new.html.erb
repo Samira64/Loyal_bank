@@ -1,9 +1,19 @@
-<div class="page-header">
-	<h3>New Bank Account for <%= @company.name %></h3>
-</div>
+ <div class="panel-header">
+ <div class="row">
+      <div class="col-sm-6 header-col">
+         <p class="header-title"> Create New Bank Account </p>
+      </div>
+      <div class="col-sm-6 header-col">
+         <ul class="header-links">
+            <li>
+               <a href="<%= company_url(@company) %>">Cancel</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+ </div>
 
 <%= render 'form' %>
 
-<ul class="pager back-button">
-	<li><%= link_to 'Back To Current Company',  company_url(@company) %></li>
-</ul>
+
+

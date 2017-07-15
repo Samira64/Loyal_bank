@@ -1,12 +1,30 @@
-<div class="page-header">
-	<h3>Edit Company <%= @company.name %></h3>
+<div class="panel-header">
+	<div class="row">	
+		<div class="col-sm-6 header-col">
+			<p class="header-title">
+				<%= image_tag @company.logo.url(:thumb), class: "img-rounded logo-img", style: 'width:40px; height:40px;' %>
+				<span class="mlm"><%= @company.name.capitalize %></span>
+			</p>
+		</div>
+		<div class="col-sm-6 header-col">
+			<ul class="header-links">
+				<li>
+					<a href="/companies/<%= @company.id %>" data-confirm="Are you are you want to delete this company?" rel="nofollow" data-method="delete">
+						<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li><a href="/companies/<%= @company.id %>">Cancel</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
 
 <%= render 'form' %>
 
-<ul class="pager back-button">
-	<li><a href="/companies" role="button"> Back To Companies </a></li>
-</ul>
+
+
+
+
 
 
 

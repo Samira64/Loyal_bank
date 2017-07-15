@@ -25,10 +25,13 @@ ActiveRecord::Schema.define(version: 201704021115048) do
     t.string   "bank_address"
     t.string   "username"
     t.string   "password"
-    t.string   "logo"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.json     "custom_fields"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.index ["company_id"], name: "index_bank_accounts_on_company_id", using: :btree
   end
 
@@ -49,11 +52,10 @@ ActiveRecord::Schema.define(version: 201704021115048) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "password_confirmation"
     t.datetime "last_login"
     t.integer  "login_count"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "bank_accounts", "companies"

@@ -12,10 +12,12 @@ before_action :authenticate_user
 		else	
 			@companies = Company.all
 		end	
+		render layout: 'modern'
 	end
 	
 	def new  
 		@company = Company.new
+		render layout: 'modern'
 	end
 
 	def create
@@ -23,7 +25,7 @@ before_action :authenticate_user
 		if @company.save
 			redirect_to company_url(@company), notice: "The company   \"#{@company.name}\"   was built successfully."
 		else
-			render "new"
+			render "new", layout: 'modern'
 		end
 	end
 
@@ -40,19 +42,20 @@ before_action :authenticate_user
 		else
 			@bank_accounts= @company_accounts
 		end
-
+		render layout: 'modern'
 	end
 
 	def edit
 		@company= Company.find(params[:id])
+		render layout: 'modern'
 	end
 
 	def update 
-		@company= Company.find(params[:id])
+		@company= Company.find(params[:id])	
 		if @company.update(company_params)
 			redirect_to companies_url, notice: "The company \"#{@company.name}\" was updated sucessfully."
 		else
-			render "edit"
+			render "edit", layout: 'modern'
 		end
 	end
 
@@ -68,6 +71,5 @@ before_action :authenticate_user
 	def company_params
 		params.require(:company).permit(:name, :address, :directors, :logo)
 	end
-
 
 end
