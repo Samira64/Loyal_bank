@@ -267,7 +267,12 @@ hr {
     }
     .info{
       font-size: 20px;
+      padding: 5px 10px;
       color: gray;
+    }
+    .director-bordered {
+      border: 1px $border-color solid;
+      border-radius: 25px; 
     }
   }
   &.company{
