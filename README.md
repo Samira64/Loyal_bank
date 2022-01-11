@@ -6,5 +6,3 @@ This is a Sample project store for reading and editing info (bank accounts) and 
 ![CHEESE!](images/create-company.png)
 ![CHEESE!](images/logout.png)
 
-
-
