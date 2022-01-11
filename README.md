@@ -1,24 +1,8 @@
-# README
+This is a Sample project store for reading and editing info (bank accounts) and logoes of different companies.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![CHEESE!](images/signup-form.png)
+![CHEESE!](images/login-form.png)
+![CHEESE!](images/list-companies.png)
+![CHEESE!](images/create-company.png)
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
